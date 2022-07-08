@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
-const { dialog } = require('electron')
+const { dialog } = require('electron');
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -7,6 +7,8 @@ const createWindow = () => {
     height: 720,
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: true
     },
   });
 
@@ -16,16 +18,20 @@ const createWindow = () => {
   win.on('ready-to-show', () => {
     win.show()
   })
-
-  ipcMain.on('update-value', (event, arg) => {
-    BrowserWindow.webContents.send('SendToRenderer', 'Vale from uwu')
-    dialog.showOpenDialog();
-  })
 };
 
+ipcMain.on("runScript", (event, data) => {
+  dialog.showOpenDialog({
+    filters: [{
+      name: 'Music',
+      extensions: ['mp3', 'ogg']
+    }]
+  });
+});
+
 app.on('ready', () => {
-  createWindow()
-})
+  createWindow();
+});
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {

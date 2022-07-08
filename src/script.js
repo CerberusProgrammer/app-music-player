@@ -1,9 +1,5 @@
-const { ipcRenderer } = require('electron')
+const { ipcRenderer } = require("electron");
 
 function buttonClick() {
-    ipcRenderer.send('update-value', 'Message from uwu')
+    ipcRenderer.send("runScript");
 }
-
-ipcRenderer.on("SendToRenderer", function(event, arg) {
-    console.log(arg)
-})
