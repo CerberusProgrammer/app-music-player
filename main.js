@@ -20,14 +20,20 @@ const createWindow = () => {
   })
 };
 
-ipcMain.on("runScript", (event, data) => {
-  dialog.showOpenDialog({
+async function playMusic() {
+  let file = await dialog.showOpenDialog({
     filters: [{
       name: 'Music',
       extensions: ['mp3', 'ogg']
     }]
   });
+}
+
+ipcMain.on("runScript", (event, data) => {
+  playMusic();
 });
+
+
 
 app.on('ready', () => {
   createWindow();
