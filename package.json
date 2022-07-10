@@ -1,5 +1,5 @@
 {
-  "name": "app-music-player",
+  "name": "Music Player",
   "version": "1.0.0",
   "description": "A simple music player using Electron.js and React.js",
   "main": "main.js",
@@ -10,6 +10,7 @@
   "author": "Omar Flores Salazar & Paola Bastida Pardo",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^19.0.7"
+    "electron": "^19.0.7",
+    "jsmediatags": "^3.9.7"
   }
 }
