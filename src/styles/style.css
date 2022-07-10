@@ -1,3 +1,30 @@
-h1 {
-    background-color: blue;
+body {
+    font-family: 'Roboto', sans-serif;
 }
+
+audio::-webkit-media-controls-panel {
+    background-color: #6200EE;
+}
+
+audio::-webkit-media-controls-current-time-display {
+    color: white;
+}
+audio::-webkit-media-controls-time-remaining-display {
+    color: white;
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: white;
+    border-radius: 50%;
+  }
+  
+  audio::-webkit-media-controls-play-button:hover {
+    background-color: rgba(177,212,224, .7);
+  }
+
+  audio::-webkit-media-controls-timeline {
+    background-color: white;
+    border-radius: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }

@@ -1,17 +1,42 @@
 let audio = null;
 
 const btn = document.getElementById('btn')
-const filePathElement = document.getElementById('filePath')
+const list = document.getElementById('songs')
+
+var songs = []
 
 btn.addEventListener('click', async () => {
+  await window.electronAPI.openFile()
   const filePath = await window.electronAPI.openFile()
-  filePathElement.innerText = filePath
 
-  console.log(window.electronAPI.changeImage())
+  const tag = await window.electronAPI.changeImage()
+  var artist = tag.artist
+  var title = tag.title
+  var titleSong = "" + title + " - " + artist
 
-  let audio = new Audio(filePath)
-  audio.play();
+  var audio = new Audio(filePath)
+  var controller = document.getElementById('control')
 
-  //const base64 = window.electronAPI.changeImage(filePath)
-  //document.getElementById('img').setAttribute('src', base64);
+  songs.push(audio.src)
+
+  document.getElementById('source').setAttribute('src', audio.src)
+  controller.load()
+
+  var span1 = document.createElement('span')
+  span1.setAttribute('class', 'mdc-list-item__ripple')
+  var span2 = document.createElement('span')
+  span2.setAttribute('class', 'mdc-list-item__text')
+  span2.innerHTML = titleSong
+  
+  var s = document.createElement('li');
+  s.setAttribute('class', 'mdc-list-item')
+  s.appendChild(span1)
+  s.appendChild(span2)
+
+  s.onclick = function() {
+    document.getElementById('source').setAttribute('src', audio.src)
+    console.log('uwu')
+  }
+
+  list.appendChild(s)
 })

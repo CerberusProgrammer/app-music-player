@@ -2,15 +2,45 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Dialog</title>
-  </head>
-  <body>
-    <img id="img" src="./img/music-placeholder.png" width="300" height="300">
+    <title>Music Player</title>
 
-    <button type="button" id="btn">Open a File</button>
-    File path: <strong id="filePath"></strong>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+    <link rel="stylesheet" href="./styles/style.css"></link>
+  </head>
+
+  <body>
+
+    <header class="mdc-top-app-bar">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <span class="mdc-top-app-bar__title">Web App Music Player</span>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+          
+        </section>
+      </div>
+    </header>
+
+    <main class="mdc-top-app-bar--fixed-adjust">
+      <ul id="songs" class="mdc-list"></ul>
+
+      <button type="button" id="btn" class="mdc-button foo-button">
+        <div class="mdc-button__ripple"></div>
+        <span class="mdc-button__label">Import a song</span>
+      </button>
+
+      File path: <strong id="filePath"></strong>
+
+      <audio controls id="control">
+        <source id="source">
+      </audio>
+    </main>
+
     <script src='./script.js'></script>
   </body>
 </html>

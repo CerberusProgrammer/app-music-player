@@ -12,5 +12,12 @@
   "devDependencies": {
     "electron": "^19.0.7",
     "jsmediatags": "^3.9.7"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@material/top-app-bar": "^14.0.0",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.8.7"
   }
 }
