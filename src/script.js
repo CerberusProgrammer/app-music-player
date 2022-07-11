@@ -35,7 +35,7 @@ btn.addEventListener('click', async () => {
 
   s.onclick = function() {
     document.getElementById('source').setAttribute('src', audio.src)
-    console.log('uwu')
+    controller.load();
   }
 
   list.appendChild(s)

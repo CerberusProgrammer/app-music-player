@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
@@ -20,9 +20,14 @@
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
           <span class="mdc-top-app-bar__title">Web App Music Player</span>
         </section>
+
         <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-          
+          <button class="mdc-fab" aria-label="Favorite">
+            <div class="mdc-fab__ripple"></div>
+            <span class="mdc-fab__icon material-icons">add</span>
+          </button>
         </section>
+        
       </div>
     </header>
 
@@ -33,13 +38,20 @@
         <div class="mdc-button__ripple"></div>
         <span class="mdc-button__label">Import a song</span>
       </button>
-
-      File path: <strong id="filePath"></strong>
-
-      <audio controls id="control">
-        <source id="source">
-      </audio>
     </main>
+
+    <footer>
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <span class="mdc-top-app-bar__title">Artist - Song</span>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+          <audio controls id="control">
+            <source id="source">
+          </audio>
+        </section>
+      </div>
+    </footer>
 
     <script src='./script.js'></script>
   </body>
