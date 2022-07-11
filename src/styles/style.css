@@ -2,6 +2,18 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+#control {
+  width: 100%;
+}
+
+#btn-add {
+  padding-right: 5%;
+}
+
+footer {
+  
+}
+
 audio::-webkit-media-controls-panel {
   background-color: #6200EE;
 }
